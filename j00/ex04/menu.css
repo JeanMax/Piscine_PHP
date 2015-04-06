@@ -1,0 +1,86 @@
+/******************************************************************************/
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   menu.css                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/04/06 20:18:50 by mcanal            #+#    #+#             */
+/*   Updated: 2015/04/06 23:03:44 by mcanal           ###   ########.fr       */
+/*                                                                            */
+/******************************************************************************/
+
+#menu, .sub-list{
+	padding:0;
+	margin:0;
+	text-align:center;
+}
+.main-list{
+	display:inline-block;
+	position:relative;
+	border-radius:8px 8px 0 0;
+}
+.sub-list{
+	display:inherit;
+	border-radius:0;
+}
+.sub-list:hover{
+	border-radius:0;
+}
+.sub-list:last-child{
+	border-radius:0 0 8px 8px;
+}
+.sub-list{
+	position:absolute;
+	left: 0;
+	right: 0;
+	max-height:0;
+	overflow:hidden;
+	transition: .5s;
+}
+.main-list:hover ul{
+	max-height:15em;
+}
+/* background des liens menus */
+#A{
+	background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+}
+#B{
+	background-image:linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+}
+#C{
+	background-image:linear-gradient(to bottom, #F6AD1A 0%, #9F391A 100%);
+}
+#D{
+	background-image:linear-gradient(to bottom, #CFFF6A 0%, #677F35 100%);
+}
+/* background des liens sous menus */
+#A li{
+	background:#2A2333;
+}
+#B li{
+	background:#333A40;
+}
+#C li{
+	background:#9F391A;
+}
+#D li{
+	background:#677F35;
+}
+a{
+	text-decoration:none;
+	display:block;
+	padding:8px 32px;
+	color:white;
+	font-family:arial;
+}
+.sub-list a{
+	padding:8px 0;
+}
+/* color l'element selectionné */
+.main-list:hover li a{
+	color:white;
+}
+.main-list:hover a, .main-list li:hover a{
+	color:black;
+}

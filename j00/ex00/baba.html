@@ -6,36 +6,40 @@
 <!-- By: mcanal <zboub@42.fr>                       +#+  +:+       +#+       -->
 <!--                                              +#+#+#+#+#+   +#+          -->
 <!-- Created: 2015/04/06 16:59:37 by mcanal            #+#    #+#            -->
-<!-- Updated: 2015/04/06 17:50:04 by mcanal           ###   ########.fr      -->
+<!-- Updated: 2015/04/06 19:29:17 by mcanal           ###   ########.fr      -->
 <!--                                                                         -->
 <!-- *********************************************************************** -->
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html style="background-color: pink;">
+	<meta charset="utf-8">
+	
 	<head>
-	  <title>B.A.BA</title>
-	  <style>
-		 <!--
-			 fond rose
-			 h1 centré fond + blanc
-			 img cote a cote, liens correspondant en dessous
-			 ligne horizontale sous le body
-			 aligner a droite footer, italique, p:monospace
-		   -->
-	  </style>
+		<title>B.A.BA</title>
+		<style>
+			h1 { text-align: center; color: white; }
+			footer { text-align:right; color:white; font-style:italic; font-family:monospace; position:fixed; bottom:0; left:0; border-top-style:solid; height:100px; width:100%}
+		</style>
 	</head>
 
 	<body>
-		<h1>Ceci est un gros titre en blanc centré</h1>
-		<img src="">
-		<img src="">
-		<a href=""></a>
-		<a href=""></a>
+		<h1>Ceci est un gros titre en blanc centr&eacute</h1>
+
+		<div style="float:left;text-align:center;margin-right:50px;">
+			<img src="http://arrosoirs-secateurs.com/IMG/jpg/poule1.jpg">
+			<br />
+			<a href="http://arrosoirs-secateurs.com">lien 1</a>
+		</div>
+		<div style="float:right;text-align:center;">
+			<img src="http://www.cgos.info/images//bonasavoir/cropped/a6763af3b59ab15c65004115b51edb22.jpg?c=87f3e8a7dab629b421deb5b045e4cd64.jpg">
+			<br />
+			<a href="http://www.cgos.info">lien 2</a>
+		</div>
+
 	</body>
 
 	<footer>
-	  © mcanal 2015
+		&copy mcanal 2015
 	</footer>
 
 </html>
