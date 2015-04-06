@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/07 00:26:48 by mcanal            #+#    #+#             */
-/*   Updated: 2015/04/07 00:26:54 by mcanal           ###   ########.fr       */
+/*   Updated: 2015/04/07 00:36:26 by mcanal           ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -111,8 +111,8 @@ body {
 
 #chair {
 	position: absolute;
-	width: 190px;
-	height: 200px;
-	top: 530px;
-	left: 860px;
+	width: 150px;
+	height: 230px;
+	top: 490px;
+	left: 620px;
 }
