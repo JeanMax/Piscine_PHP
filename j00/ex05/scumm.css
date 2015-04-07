@@ -1,0 +1,177 @@
+body {
+	 background-color: #4F4F4F;
+	 font-size: 16px;
+	 font-family: verdana;
+}
+
+.col {
+	 background-color:#8F8F8F;
+	 border-radius:13px;
+	 box-shadow: 10px 10px 10px #000000;
+}
+
+.banner {
+		width:1420px;
+		height:135px;
+		margin-right: 80px;
+		margin-left: 80px;
+}
+
+#dayof {
+	   height:115px;
+	   margin-top:10px;
+	   margin-left:4px;
+}
+
+.main {
+	  width: 1360px;
+	  margin-right: 120px;
+	  margin-left: 115px;
+	  margin-top:20px;
+}
+
+.icone {
+	   width: 65px;
+	   height: 64px;
+	   margin-top:10px;
+}
+
+#main_img {
+		  width: 1000px;
+		  height: 560px;
+		  margin-top: 10px;
+		  margin-left: 10px;
+}
+
+#boite {
+	   width:510px;
+	   height:560px;
+	   margin-top:10px;
+	   margin-left:250px;
+}
+
+.side {
+	  width:140px;
+	  height:425px;
+}
+
+#col1 {
+	  float: left;
+}
+
+#colc {
+	  margin-left: 170px;
+	  margin-right: 170px;
+	  overflow: hidden;
+	  width:1020px;
+	  height:580px;
+}
+
+#col2 {
+	  float: right;
+}
+
+#wall {
+	  height:70px;
+	  width:120px;
+	  background-image: url(resources/brick.jpg);
+	  margin-left: 10px;
+	  margin-top: -10px;
+}
+
+#greenb {
+		position: relative;
+		background-color:#86FD87;
+		width:520px;
+		height:170px;
+		overflow: hidden;
+		left: -80px;
+		z-index: 10;
+		top: -75px;
+		padding-left:10px;
+}
+
+#screen {
+		position: absolute;
+		width: 200px;
+		height: 170px;
+		top: 480px;
+		left: 1090px;
+}
+
+#chair {
+	   position: absolute;
+	   width: 150px;
+	   height: 230px;
+	   top: 490px;
+	   left: 620px;
+}
+
+#woman {
+       position: absolute;
+       width: 90px;
+       height: 230px;
+       top: 400px;
+       left: 305px;
+}
+
+#box {
+	   position: absolute;
+       width: 420px;
+       height: 400px;
+       top: 250px;
+       left: 600px;
+}
+
+#box_open {
+		  position: absolute;
+       	  width: 220px;
+       	  height: 90px;
+       	  top: 270px;
+       	  left: 730px;
+}
+
+#bm_robot
+{
+	position:absolute;
+	width:120px;
+	height:270px;
+	left: 630px;
+	top: 280px;
+}
+
+#bm_engrenage
+{
+	position:absolute;
+	width:120px;
+	height:60px;
+	left: 600px;
+	top: 673px;
+}
+
+#bm_oiseau
+{
+	position:absolute;
+	width:120px;
+	height:100px;
+	left: 430px;
+	top: 230px;
+}
+
+#bm_robot_girl
+{
+	position:absolute;
+	width:120px;
+	height:200px;
+	left: 790px;
+	top: 370px;
+}
+
+#bm_robot_chat
+{
+	position:absolute;
+	width:120px;
+	height:100px;
+	left: 820px;
+	top: 600px;
+}

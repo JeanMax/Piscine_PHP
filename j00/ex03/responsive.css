@@ -1,0 +1,48 @@
+h1 {
+	text-align: center; color: red;
+}
+.cell{
+	border:0px solid black;
+}
+.weight{
+	text-align:right;font-size:0.8vmin;
+}
+.symbol{
+	text-align:center;font-style:bold;font-size:2vmin;
+}
+.nb {
+	text-align:left;font-size:0.8vmin;
+}
+.non-metaux{
+	background-color:#B4BBA1;
+}
+.gaz-nobles{
+	background-color:#DEF0F1;
+}
+.alcalins{
+	background-color:#C4C4C4;
+}
+.alcater{
+	background-color:#C4B89E;
+}
+.halo{
+	background-color:#F4F0CA;
+}
+.metallo {
+	background-color:#E3CFC8;
+}
+.pauvres{
+	background-color:#E2E3DF;
+}
+.transit{
+	background-color:#E5DEC5;
+}
+.lanthan {
+	background-color:#CCC5D5;
+}
+.actin{
+	background-color:#E9DDEA;
+}
+td{
+	width:5.5555%;height:11.11111%;
+}
