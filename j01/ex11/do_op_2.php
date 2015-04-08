@@ -1,257 +1,148 @@
 #!/usr/bin/php
-<?php
-function check($s1)
-{
-	$k = 1;
-	while ($s1[$k])
-	{
-		if ($s1[$k] != ' ' && ($s1[$k] < '0' || $s1[$k] > '9'))
-		   return 0;
-		   $k++;
-}
-	return 1;
-} 
-
-function error($s)
+<?PHP
+function check($str)
 {
 	$i = 0;
-	$l = strlen($s);
-	if ($l < 3)
-{
-		echo "Syntax Error\n";
-	   return 0;
-}
-	$n = 0;
-	$p = 0;
-	while ($s[$i])
-{
-	if ($s[$i] != " " && $s[$i] != "*" && $s[$i] != "+" && $s[$i] != "-" && $s[$i] != "/" && $s[$i] != "%"  && ($s[$i] < '0' || $s[$i] > '9'))
+	$len = strlen($str);
+	while($i < $len)
 	{
-		echo "Syntax Error\n";
-        return 0;
-		}
+		if (($str[$i] < '0' || $str[$i] > '9') && $str[$i] !== '+' && $str[$i] !== '-' && $str[$i] !== '*' && $str[$i] !== '/' && $str[$i] !== '%' && $str[$i] !== ' ')
+			return (0);
 		$i++;
-}
-	return 1;
-}
-if ($argc != 2)
-{
-   echo "Incorrect Parameters\n";
-   return (0);
-}
-
-if (!error($argv[1]))
-   return 0;
-
-$c = '+';
-$pos = strpos($argv[1], $c);
-if ($pos)
- {
-	$tab = explode("+", $argv[1]);
-	if ($tab[0][0] == '-' || $tab[1][0] == '-')
-{ 
-		$ck1 = check(trim($tab[0]));
-		$ck2 = check(trim($tab[1]));
-	if (!$ck1 || !$ck2)
-	{
-		echo "Syntax Error\n";
-		return (0);
 	}
-	else
+	$i = 0;
+	$nb = 0;
+	$op = 0;
+	$minus = 0;
+	$test = 0;
+	$pos = array();
+	while ($i < $len)
+	{
+		if ($str[$i] >= '0' && $str[$i] <= '9')
 		{
-		echo ($tab[0] + $tab[1]);
-	echo "\n";
-	return (0);
-}
-}
-		 
-else	if ((ctype_digit(trim($tab[0]))) && (ctype_digit(trim($tab[1]))))
-	{
-	echo ($tab[0] + $tab[1]);
-	echo "\n";
-	return (0);
-	}
-	else
-	{
-echo "Syntax Error\n";
-	
-	return (0);
-	}
-}
-
-
-
-$c = '/';
-$pos = strpos($argv[1], $c);
-if ($pos)
- {
-    $tab = explode("/", $argv[1]);
-
-   if ($tab[0][0] == '-' || $tab[1][0] == '-')
-{
-        $ck1 = check(trim($tab[0]));
-        $ck2 = check(trim($tab[1]));
-    if (!$ck1 || !$ck2)
-    {
-		echo "Syntax Error\n";
-    	return (0);
-    }
-else
-		{
-		echo ($tab[0] / $tab[1]);
-    echo "\n";
-    return (0);
-}
-}
- else   if ((is_numeric(trim($tab[0])))  && (is_numeric(trim($tab[1]))))
-    {
-    echo ($tab[0] / $tab[1]);
-    echo "\n";
-    return (0);
-    }
-    else
-    {
-echo "Syntax Error\n";
-    return (0);
-    }
-}
-
-$c = '%';
-$pos = strpos($argv[1], $c);
-if ($pos)
- {
-    $tab = explode("%", $argv[1]);
- if ($tab[0][0] == '-' || $tab[1][0] == '-')
-{
-        $ck1 = check(trim($tab[0]));
-        $ck2 = check(trim($tab[1]));
-    if (!$ck1 || !$ck2)
-    {
-        echo "Syntax Error\n";
-        return (0);
-    }
-else
-        {
-        echo ($tab[0] % $tab[1]);
-    echo "\n";
-    return (0);
-}
-}
- else   if ((is_numeric(trim($tab[0])))    && (is_numeric(trim($tab[1]))))
-    {
-    echo ($tab[0] % $tab[1]);
-    echo "\n";
-    return (0);
-    }
-    else
-    {
-echo "Syntax Error\n";
-    return (0);
-    }
-}
-
-$c = '*';
-$pos = strpos($argv[1], $c);
-if ($pos)
- {
-    $tab = explode($c, $argv[1]);
- if ($tab[0][0] == '-' || $tab[1][0] == '-')
-{
-        $ck1 = check(trim($tab[0]));
-        $ck2 = check(trim($tab[1]));
-    if (!$ck1 || !$ck2)
-    {
-        echo "Syntax Error\n";
-        return (0);
-    }
-else
-        {
-        echo ($tab[0] * $tab[1]);
-    echo "\n";
-    return (0);
-}
-}
- else   if ((is_numeric(trim($tab[0])))  && (is_numeric(trim($tab[1]))))
-    {
-    echo ($tab[0] * $tab[1]);
-    echo "\n";
-    return (0);
-    }
-    else
-    {
-echo "Syntax Error\n";
-    return (0);
-    }
-}
-
-$c = '-';
-$pos = strpos($argv[1],	$c);
-if ($pos !== FASLE)
-{
-		$y = 0;
-		$i = 0;
-		while ($argv[1][$i])
-			  {
-				if ($argv[1][$i] != '-' && ($s1[$k] < '0' && $s1[$k] > '9'))
-				{
-				echo "Syntax Error\n";
-    			return (0);
-				}
-				if ($argv[1][$i] == '-')
-						$y++;
+			$nb++;
+			while ($i < $len && $str[$i] >= '0' && $str[$i] <= '9')
 				$i++;
-				}
-		if ($y > 3)
-		{
-		echo "Syntax Error\n";
-    	return (0);
 		}
-	$i = 0;
-	$y = 0;
-//	$tp1 = array($argv[1]);
-$tp2 = array();	
-	while ($argv[1][$i] && !$y)
-	{
-		if ($i > 0 && $argv[1][$i+1] == '-')
-		$y++;
-		$tp1[$i] = $argv[1][$i];
-		$i++;
-	} 
-	$i++;
-	$y = 0;
-	while ($argv[1][$i])
-	{
-		$tp2[$y] = $argv[1][$i];
-		$i++;
-		$y++;
+		if ($test > 1 && ($str[$i] == '+' || $str[$i] == '*' || $str[$i] == '/' || $str[$i] == '%'))
+			$minus = 100;
+		if ($str[$i] == '+' || $str[$i] == '*' || $str[$i] == '/' || $str[$i] == '%' || $str[$i] == '-')
+		{
+			if ($str[$i] == '-')
+				$test++;
+			$pos = array_merge($pos, array($i));
+			$op++;
+		}
+		if ($i < $len)
+			$i++;
 	}
-	$tab = explode("-", $argv[1]);
-	$n = count($tab);
-	if ($n == 2)
+	if ($op > 1)
+	{
+		$sign = 0;
+		$tmp2 = 0;
+		foreach($pos as $tmp)
+		{
+			if ($str[$tmp] != '-')
+				$sign++;
+			if (!$tmp2 && $str[$tmp] == '-')
+				$tmp2 = $tmp;
+			if ($str[$tmp] == '-' && ($tmp2 == $tmp - 1 || $str[$tmp + 1] == ' ') && $sign)
+				$sign = 100;
+		}
+		$c = count($pos);
+		if ($sign > 1 || ($sign && $c == 4) || $c > 3)
+			return (0);
+	}
+	if ($nb != 2 || $op == 0 || $minus == 100)
+		return (0);
+	return (1);
+}
+function nospace($str)
 {
-	   echo ($tab[0] - $tab[1]);
-	   echo "\n";
-	   return 0;
-}	
-else if ($n == 3 && $argv[1][0] == '-')
-{ 
-	   echo (-$tab[1] - $tab[2]);
-	   echo "\n";
-	   return 0;
+	$len = strlen($str);
+	$i = 0;
+	$sign = 0;
+	$op = 0;
+	while ($i < $len)
+	{
+		if ($str[$i] == '-')
+			$sign++;
+		if ($str[$i] == '+' ||  $str[$i] == '/' || $str[$i] == '*' || $str[$i] == '%')
+			$op++;
+		$i++;
+	}
+	if ($op)
+		return (0);
+	return (1);
 }
-else if ($n == 4 && $argv[1][0] == '-')
-{ 
-	   echo (-$tab[1] + $tab[3]);
-	   echo "\n";
-	   return 0;
+function ft_split($str, $nb)
+{
+	$tmp = $str;
+	$len = strlen($tmp);
+	$tmp = str_replace("+", " + ", $tmp);
+	$tmp = str_replace("*", " * ", $tmp);
+	$tmp = str_replace("/", " / ", $tmp);
+	$tmp = str_replace("%", " % ", $tmp);
+	if (nospace($tmp) !== 0)
+	{
+		$len = strlen($tmp);
+		$i = 0;
+		$j = 0;
+		$s = 0;
+		$tmp2 = array();
+		while ($i < $len)
+		{
+			if ($tmp[$i] !== " ")
+			{
+				$tmp2[$j] = $tmp[$i];
+				if ($i > 0 && $j > 0 && !$s && $tmp[$i] == '-')
+				{
+					$tmp2[$j] = "+";
+					$s = $j;
+					$j++;
+				}
+				$j++;
+			}
+			$i++;
+		}
+		$a = array(implode(array_slice($tmp2, 0, $s)));
+		$b = array(implode(array_slice($tmp2, $s + 1)));
+		$op = array("-");
+		$tab = array_merge($a, $op, $b);
+	}
+	else
+	{
+		$tab = explode(" ", $tmp);
+		$tab = array_filter($tab);
+		$us = array();
+		$tab = array_merge($tab, $us);
+	}
+	return ($tab);
 }
-else if ($n == 3)
-{ 
-	   echo ($tab[0] + $tab[2]);
-	   echo "\n";
-	   return 0;
+if ($argc == 2)
+{
+	$new = $argv[1];
+	if (check($new))
+	{
+		$tab = ft_split($new, $nb);
+		$a = $tab[0];
+		$b = $tab[2];
+		$op = $tab[1];
+		if ($op == "+")
+			$nb	= $a + $b;
+		else if ($op == "-")
+			$nb = $a - $b;
+		else if ($op == "*")
+			$nb = $a * $b;
+		else if ($op == "/")
+			$nb = $a / $b;
+		else
+			$nb = $a % $b;
+		echo "$nb\n";
+	}
+	else
+		echo "Syntax Error\n";
 }
-    return (0);
-}
-return (0);
+else
+	echo "Incorrect Parameters\n";
 ?>
