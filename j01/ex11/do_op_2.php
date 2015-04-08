@@ -5,7 +5,7 @@ function check($s1)
 	$k = 1;
 	while ($s1[$k])
 	{
-		if ($s1[$k] < '0' || $s1[$k] > '9')
+		if ($s1[$k] != ' ' && ($s1[$k] < '0' || $s1[$k] > '9'))
 		   return 0;
 		   $k++;
 }
@@ -25,7 +25,7 @@ function error($s)
 	$p = 0;
 	while ($s[$i])
 {
-	if ($s[$i] != "*" && $s[$i] != "+" && $s[$i] != "-" && $s[$i] != "/" && $s[$i] != "%"  && ($s[$i] < '0' || $s[$i] > '9'))
+	if ($s[$i] != " " && $s[$i] != "*" && $s[$i] != "+" && $s[$i] != "-" && $s[$i] != "/" && $s[$i] != "%"  && ($s[$i] < '0' || $s[$i] > '9'))
 	{
 		echo "Syntax Error\n";
         return 0;
@@ -34,9 +34,6 @@ function error($s)
 }
 	return 1;
 }
- 
- 
-
 if ($argc != 2)
 {
    echo "Incorrect Parameters\n";
@@ -106,7 +103,7 @@ else
     return (0);
 }
 }
- else   if ((ctype_digit(trim($tab[0])))    && (ctype_digit(trim($tab[1]))))
+ else   if ((is_numeric(trim($tab[0])))  && (is_numeric(trim($tab[1]))))
     {
     echo ($tab[0] / $tab[1]);
     echo "\n";
@@ -140,7 +137,7 @@ else
     return (0);
 }
 }
- else   if ((ctype_digit(trim($tab[0])))    && (ctype_digit(trim($tab[1]))))
+ else   if ((is_numeric(trim($tab[0])))    && (is_numeric(trim($tab[1]))))
     {
     echo ($tab[0] % $tab[1]);
     echo "\n";
@@ -174,7 +171,7 @@ else
     return (0);
 }
 }
- else   if ((ctype_digit(trim($tab[0])))    && (ctype_digit(trim($tab[1]))))
+ else   if ((is_numeric(trim($tab[0])))  && (is_numeric(trim($tab[1]))))
     {
     echo ($tab[0] * $tab[1]);
     echo "\n";

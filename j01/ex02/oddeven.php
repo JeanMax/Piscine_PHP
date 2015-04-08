@@ -12,5 +12,5 @@ while (($nb = fgets(STDIN)))
 		echo "Le chiffre $nb est Impair\n";
 	echo "Entrez un nombre: ";
 }
-echo "^D\n";
+echo "\n";
 ?>

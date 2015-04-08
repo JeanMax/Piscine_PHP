@@ -1,0 +1,663 @@
+<!-- *********************************************************************** -->
+<!--                                                                         -->
+<!--                                                      :::      ::::::::  -->
+<!-- mendeleiev.html                                    :+:      :+:    :+:  -->
+<!--                                                  +:+ +:+         +:+    -->
+<!-- By: mcanal <zboub@42.fr>                       +#+  +:+       +#+       -->
+<!--                                              +#+#+#+#+#+   +#+          -->
+<!-- Created: 2015/04/06 17:00:23 by mcanal            #+#    #+#            -->
+<!-- Updated: 2015/04/06 20:04:14 by mcanal           ###   ########.fr      -->
+<!--                                                                         -->
+<!-- *********************************************************************** -->
+
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+
+	<head>
+		<title>Tableau Periodique</title>
+		<style>
+			h1 { text-align: center; color: red; }
+			.cell{border:0px solid black;}
+			.weight{text-align:right;font-size:0.8vmin;}
+			.symbol{text-align:center;font-style:bold;font-size:2vmin;}
+			.nb {text-align:left;font-size:0.8vmin;}
+			.non-metaux{background-color:#B4BBA1;}
+			.gaz-nobles{background-color:#DEF0F1;}
+			.alcalins{background-color:#C4C4C4;}
+			.alcater{background-color:#C4B89E;}
+			.halo{background-color:#F4F0CA;}
+			.metallo {background-color:#E3CFC8;}
+			.pauvres{background-color:#E2E3DF;}
+			.transit{background-color:#E5DEC5;}
+			.lanthan {background-color:#CCC5D5;}
+			.actin{background-color:#E9DDEA;}
+			td{width:5.5555%;height:11.11111%;}
+		</style>
+	</head>
+
+	<body>
+		<h1>Tableau Periodique</h1>
+		<table style="height:100%;width:100%;" contenteditable="true">
+			<tr>
+				<td class="cell non-metaux">
+					<p class="weight">1,00794</p>
+					<p class="symbol">H</p>
+					<p class="nb">1</p>
+				</td>
+				<td colspan="16"></td>
+				<td class="cell gaz-nobles">
+					<p class="weight">4,0026</p>
+					<p class="symbol">He</p>
+					<p class="nb">2</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="cell alcalins">
+					<p class="weight">6,941</p>
+					<p class="symbol">Li</p>
+					<p class="nb">3</p>
+				</td>
+				<td class="cell alcater">
+					<p class="weight">9,01218</p>
+					<p class="symbol">Be</p>
+					<p class="nb">4</p>
+				</td>
+				<td colspan="10"></td>
+				<td class="cell metallo">
+					<p class="weight">10,811</p>
+					<p class="symbol">B</p>
+					<p class="nb">5</p>
+				</td>
+				<td class="cell non-metaux">
+					<p class="weight">12,0107</p>
+					<p class="symbol">C</p>
+					<p class="nb">6</p>
+				</td>
+				<td class="cell non-metaux">
+					<p class="weight">14,0067</p>
+					<p class="symbol">N</p>
+					<p class="nb">7</p>
+				</td>
+				<td class="cell non-metaux">
+					<p class="weight">15,9994</p>
+					<p class="symbol">O</p>
+					<p class="nb">8</p>
+				</td>
+				<td class="cell halo">
+					<p class="weight">18,9984</p>
+					<p class="symbol">F</p>
+					<p class="nb">9</p>
+				</td>
+				<td class="cell gaz-nobles">
+					<p class="weight">20,1797</p>
+					<p class="symbol">Ne</p>
+					<p class="nb">10</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="cell alcalins">
+					<p class="weight">22,9898</p>
+					<p class="symbol">Na</p>
+					<p class="nb">11</p>
+				</td>
+				<td class="cell alcater">
+					<p class="weight">24,305</p>
+					<p class="symbol">Mg</p>
+					<p class="nb">12</p>
+				</td>
+				<td colspan="10"></td>
+				<td class="cell pauvres">
+					<p class="weight">26,9815</p>
+					<p class="symbol">Al</p>
+					<p class="nb">13</p>
+				</td>
+				<td class="cell metallo">
+					<p class="weight">28,0855</p>
+					<p class="symbol">Si</p>
+					<p class="nb">14</p>
+				</td>
+				<td class="cell non-metaux">
+					<p class="weight">30,9738</p>
+					<p class="symbol">P</p>
+					<p class="nb">15</p>
+				</td>
+				<td class="cell non-metaux">
+					<p class="weight">32,065</p>
+					<p class="symbol">S</p>
+					<p class="nb">16</p>
+				</td>
+				<td class="cell halo">
+					<p class="weight">35,453</p>
+					<p class="symbol">Cl</p>
+					<p class="nb">17</p>
+				</td>
+				<td class="cell gaz-nobles">
+					<p class="weight">39,948</p>
+					<p class="symbol">Ar</p>
+					<p class="nb">18</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="cell alcalins">
+					<p class="weight">39,0983</p>
+					<p class="symbol">K</p>
+					<p class="nb">19</p>
+				</td>
+				<td class="cell alcater">
+					<p class="weight">40,078</p>
+					<p class="symbol">Ca</p>
+					<p class="nb">20</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">44,9559</p>
+					<p class="symbol">Sc</p>
+					<p class="nb">21</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">47,867</p>
+					<p class="symbol">Ti</p>
+					<p class="nb">22</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">50,9415</p>
+					<p class="symbol">V</p>
+					<p class="nb">23</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">51,9961</p>
+					<p class="symbol">Cr</p>
+					<p class="nb">24</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">54,9380</p>
+					<p class="symbol">Mn</p>
+					<p class="nb">25</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">55,845</p>
+					<p class="symbol">Fe</p>
+					<p class="nb">26</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">58,9332</p>
+					<p class="symbol">Co</p>
+					<p class="nb">27</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">58,6934</p>
+					<p class="symbol">Ni</p>
+					<p class="nb">28</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">63,546</p>
+					<p class="symbol">Cu</p>
+					<p class="nb">29</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">65,38</p>
+					<p class="symbol">Zn</p>
+					<p class="nb">30</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">69,723</p>
+					<p class="symbol">Ga</p>
+					<p class="nb">31</p>
+				</td>
+				<td class="cell metallo">
+					<p class="weight">72,63</p>
+					<p class="symbol">Ge</p>
+					<p class="nb">32</p>
+				</td>
+				<td class="cell metallo">
+					<p class="weight">74,9216</p>
+					<p class="symbol">As</p>
+					<p class="nb">33</p>
+				</td>
+				<td class="cell non-metaux">
+					<p class="weight">78,96</p>
+					<p class="symbol">Se</p>
+					<p class="nb">34</p>
+				</td>
+				<td class="cell halo">
+					<p class="weight">79.904</p>
+					<p class="symbol">Br</p>
+					<p class="nb">35</p>
+				</td>
+				<td class="cell gaz-nobles">
+					<p class="weight">83,798</p>
+					<p class="symbol">Kr</p>
+					<p class="nb">36</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="cell alcalins">
+					<p class="weight">85,4678</p>
+					<p class="symbol">Rb</p>
+					<p class="nb">37</p>
+				</td>
+				<td class="cell alcater">
+					<p class="weight">87,62</p>
+					<p class="symbol">Sr</p>
+					<p class="nb">38</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">88,9058</p>
+					<p class="symbol">Y</p>
+					<p class="nb">39</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">91,224</p>
+					<p class="symbol">Zr</p>
+					<p class="nb">40</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">92,9064</p>
+					<p class="symbol">Nb</p>
+					<p class="nb">41</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">95,96</p>
+					<p class="symbol">Mo</p>
+					<p class="nb">42</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">{ 98 }</p>
+					<p class="symbol">Tc</p>
+					<p class="nb">43</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">101,07</p>
+					<p class="symbol">Ru</p>
+					<p class="nb">44</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">102,905</p>
+					<p class="symbol">Rh</p>
+					<p class="nb">45</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">106,42</p>
+					<p class="symbol">Pd</p>
+					<p class="nb">46</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">107,868</p>
+					<p class="symbol">Ag</p>
+					<p class="nb">47</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">112,411</p>
+					<p class="symbol">Cd</p>
+					<p class="nb">48</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">114,818</p>
+					<p class="symbol">In</p>
+					<p class="nb">49</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">118,71</p>
+					<p class="symbol">Sn</p>
+					<p class="nb">50</p>
+				</td>
+				<td class="cell metallo">
+					<p class="weight">121,76</p>
+					<p class="symbol">Sb</p>
+					<p class="nb">51</p>
+				</td>
+				<td class="cell metallo">
+					<p class="weight">127,6</p>
+					<p class="symbol">Te</p>
+					<p class="nb">52</p>
+				</td>
+				<td class="cell halo">
+					<p class="weight">126,905</p>
+					<p class="symbol">I</p>
+					<p class="nb">53</p>
+				</td>
+				<td class="cell gaz-nobles">
+					<p class="weight">131,293</p>
+					<p class="symbol">Xe</p>
+					<p class="nb">54</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="cell alcalins">
+					<p class="weight">132,905</p>
+					<p class="symbol">Cs</p>
+					<p class="nb">55</p>
+				</td>
+				<td class="cell alcater">
+					<p class="weight">137,327</p>
+					<p class="symbol">Ba</p>
+					<p class="nb">56</p>
+				</td>
+				<td></td>
+				<td class="cell transit">
+					<p class="weight">178,49</p>
+					<p class="symbol">Hf</p>
+					<p class="nb">72</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">180,948</p>
+					<p class="symbol">Ta</p>
+					<p class="nb">73</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">183,84</p>
+					<p class="symbol">W</p>
+					<p class="nb">74</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">186,207</p>
+					<p class="symbol">Re</p>
+					<p class="nb">75</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">190,23</p>
+					<p class="symbol">Os</p>
+					<p class="nb">76</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">192,217</p>
+					<p class="symbol">Ir</p>
+					<p class="nb">77</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">195,084</p>
+					<p class="symbol">Pt</p>
+					<p class="nb">78</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">196,967</p>
+					<p class="symbol">Au</p>
+					<p class="nb">79</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">200,59</p>
+					<p class="symbol">Hg</p>
+					<p class="nb">80</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">204,383</p>
+					<p class="symbol">Tl</p>
+					<p class="nb">81</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">207,2</p>
+					<p class="symbol">Pb</p>
+					<p class="nb">82</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">208,98</p>
+					<p class="symbol">Bi</p>
+					<p class="nb">83</p>
+				</td>
+				<td class="cell metallo">
+					<p class="weight">{ 209 }</p>
+					<p class="symbol">Po</p>
+					<p class="nb">84</p>
+				</td>
+				<td class="cell halo">
+					<p class="weight">{ 210 }</p>
+					<p class="symbol">At</p>
+					<p class="nb">85</p>
+				</td>
+				<td class="cell gaz-nobles">
+					<p class="weight">{ 222 }</p>
+					<p class="symbol">Rn</p>
+					<p class="nb">86</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="cell alcalins">
+					<p class="weight">{ 223 }</p>
+					<p class="symbol">Fr</p>
+					<p class="nb">87</p>
+				</td>
+				<td class="cell alcater">
+					<p class="weight">{ 226 }</p>
+					<p class="symbol">Ra</p>
+					<p class="nb">88</p>
+				</td>
+				<td></td>
+				<td class="cell transit">
+					<p class="weight">{ 266 }</p>
+					<p class="symbol">Rf</p>
+					<p class="nb">104</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">{ 268 }</p>
+					<p class="symbol">Db</p>
+					<p class="nb">105</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">{ 269 }</p>
+					<p class="symbol">Sg</p>
+					<p class="nb">106</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">{ 270 }</p>
+					<p class="symbol">Bh</p>
+					<p class="nb">107</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">{ 269 }</p>
+					<p class="symbol">Hs</p>
+					<p class="nb">108</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">{ 278 }</p>
+					<p class="symbol">Mt</p>
+					<p class="nb">109</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">{ 279 }</p>
+					<p class="symbol">Ds</p>
+					<p class="nb">110</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">{ 281 }</p>
+					<p class="symbol">Rg</p>
+					<p class="nb">111</p>
+				</td>
+				<td class="cell transit">
+					<p class="weight">{ 285 }</p>
+					<p class="symbol">Cn</p>
+					<p class="nb">112</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">{ 284 }</p>
+					<p class="symbol">Uut</p>
+					<p class="nb">113</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">{ 289 }</p>
+					<p class="symbol">Fl</p>
+					<p class="nb">114</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">{ 288 }</p>
+					<p class="symbol">Uup</p>
+					<p class="nb">115</p>
+				</td>
+				<td class="cell pauvres">
+					<p class="weight">{ 293 }</p>
+					<p class="symbol">Lv</p>
+					<p class="nb">116</p>
+				</td>
+				<td class="cell halo">
+					<p class="weight">{ 294 }</p>
+					<p class="symbol">Uus</p>
+					<p class="nb">117</p>
+				</td>
+				<td class="cell gaz-nobles">
+					<p class="weight">{ 294 }</p>
+					<p class="symbol">Uuo</p>
+					<p class="nb">118</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"></td>
+				<td class="cell lanthan">
+					<p class="weight">138,906</p>
+					<p class="symbol">La</p>
+					<p class="nb">57</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">140,116</p>
+					<p class="symbol">Ce</p>
+					<p class="nb">58</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">140,908</p>
+					<p class="symbol">Pr</p>
+					<p class="nb">59</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">144,242</p>
+					<p class="symbol">Nd</p>
+					<p class="nb">60</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">{ 145 }</p>
+					<p class="symbol">Pm</p>
+					<p class="nb">61</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">150,36</p>
+					<p class="symbol">Sm</p>
+					<p class="nb">62</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">151,964</p>
+					<p class="symbol">Eu</p>
+					<p class="nb">63</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">157,25</p>
+					<p class="symbol">Gd</p>
+					<p class="nb">64</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">158,925</p>
+					<p class="symbol">Tb</p>
+					<p class="nb">65</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">162,5</p>
+					<p class="symbol">Dy</p>
+					<p class="nb">66</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">164,930</p>
+					<p class="symbol">Ho</p>
+					<p class="nb">67</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">167,259</p>
+					<p class="symbol">Er</p>
+					<p class="nb">68</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">168,934</p>
+					<p class="symbol">Tm</p>
+					<p class="nb">69</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">173,054</p>
+					<p class="symbol">Yb</p>
+					<p class="nb">70</p>
+				</td>
+				<td class="cell lanthan">
+					<p class="weight">174,967</p>
+					<p class="symbol">Lu</p>
+					<p class="nb">71</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3"></td>
+				<td class="cell actin">
+					<p class="weight">{ 227 }</p>
+					<p class="symbol">Ac</p>
+					<p class="nb">89</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">232,038</p>
+					<p class="symbol">Th</p>
+					<p class="nb">90</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">231,036</p>
+					<p class="symbol">Pa</p>
+					<p class="nb">91</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">238,029</p>
+					<p class="symbol">U</p>
+					<p class="nb">92</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 237 }</p>
+					<p class="symbol">Np</p>
+					<p class="nb">93</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 244 }</p>
+					<p class="symbol">Pu</p>
+					<p class="nb">94</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 243 }</p>
+					<p class="symbol">Am</p>
+					<p class="nb">95</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 247 }</p>
+					<p class="symbol">Cm</p>
+					<p class="nb">96</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 247 }</p>
+					<p class="symbol">Bk</p>
+					<p class="nb">97</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 251 }</p>
+					<p class="symbol">Cf</p>
+					<p class="nb">98</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 252 }</p>
+					<p class="symbol">Es</p>
+					<p class="nb">99</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 257 }</p>
+					<p class="symbol">Fm</p>
+					<p class="nb">100</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 258 }</p>
+					<p class="symbol">Md</p>
+					<p class="nb">101</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 259 }</p>
+					<p class="symbol">No</p>
+					<p class="nb">102</p>
+				</td>
+				<td class="cell actin">
+					<p class="weight">{ 262 }</p>
+					<p class="symbol">Lr</p>
+					<p class="nb">103</p>
+				</td>
+			</tr>
+		</table>
+		<p>
+			<center><img src="http://www.l214.com/fichiers/images/poules-truie-425.jpg">
+		</p></center>
+	</body>
+
+</html>
