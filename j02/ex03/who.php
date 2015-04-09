@@ -13,9 +13,9 @@ while (!feof($fd))
 
 		if (!strncmp($pack["user"], get_current_user(), strlen(get_current_user())))
 		{
-			$tab[$i]["tty"] = $pack["line"];
-			$tab[$i]["user"] = $pack["user"];
-			$tab[$i]["date"] = strftime("%b %e %H:%M",$pack["time1"]);
+			$tab[$i]["tty"] = trim($pack["line"]);
+			$tab[$i]["user"] = get_current_user();
+			$tab[$i]["date"] = strftime("%b %e %H:%M ",$pack["time1"]);
 			$i++;
 		}
 	}
