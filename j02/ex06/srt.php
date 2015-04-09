@@ -33,10 +33,10 @@ for ($i = 0; $tab[$i]; $i++)
 	$time = explode(":", $tab[$i][2]);
 	$tab[$i][5] = $time[0] * 3600 + $time[1] * 60 + $time[2];
 
-    //for sorting
-    $swap = $tab[$i][4];
-    $tab[$i][4] = $tab[$i][0];
-    $tab[$i][0] = $swap;
+	//for sorting
+	$swap = $tab[$i][4];
+	$tab[$i][4] = $tab[$i][0];
+	$tab[$i][0] = $swap;
 }
 
 sort($tab);
@@ -44,9 +44,9 @@ sort($tab);
 //print
 for ($i = 0; $tab[$i]; $i++)
 {
-    echo ($i + 1)."\n".$tab[$i][1]." --> ".$tab[$i][2]."\n".$tab[$i][3]."\n";
-    if ($tab[$i + 1])
-        echo "\n";
+	echo ($i + 1)."\n".$tab[$i][1]." --> ".$tab[$i][2]."\n".$tab[$i][3]."\n";
+	if ($tab[$i + 1])
+		echo "\n";
 }
 
 ?>
