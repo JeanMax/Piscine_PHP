@@ -3,7 +3,7 @@
 if ($argc != 2)
 	return;
 $my_tab = explode(' ', $argv[1]);
-$check_day1 = preg_match_all("/^[Mm][a][r][d][i]$|^[Ll][u][n][d][i]&|$[Mm][e][r][c][r][e][d][i]$|^[Jj][e][u][d][i]$|^[Vv][e][n][d][r][e][d][i]$|^[Ss][a][m][e][d][i]$|^[Dd][i][m][a][n][c][h][e]$/", $my_tab[0]);
+$check_day1 = preg_match_all("/^[Mm][a][r][d][i]$|^[Ll][u][n][d][i]$|^[Mm][e][r][c][r][e][d][i]$|^[Jj][e][u][d][i]$|^[Vv][e][n][d][r][e][d][i]$|^[Ss][a][m][e][d][i]$|^[Dd][i][m][a][n][c][h][e]$/", $my_tab[0]);
 $check_day2 = preg_match_all("/^[0-2][0-9]$|^[3][0-1]$|^[0-9]$/", $my_tab[1]);
 $check_month = preg_match_all("/^[Jj][a][n][v][i][e][r]$|^[Ff][e][v][r][i][e][r]$|^[Mm][a][r][s]$|^[Aa][v][r][i][l]$|^[Mm][a][i]$|^[Jj][u][i][n]$|^[Jj][u][i][l][l][e][t]$|^[aA][o][u][t]$|^[Ss][e][p][t][e][m][b][r][e]$|^[Oo][c][t][o][b][r][e]$|^[Nn][o][v][e][m][b][r][e]$|^[Dd][e][c][e][m][b][r][e]$/", $my_tab[2]);
 $check_year = preg_match_all("/^[1][9][7-9][0-9]$|^[2-9][0-9][0-9][0-9]$/", $my_tab[3]);

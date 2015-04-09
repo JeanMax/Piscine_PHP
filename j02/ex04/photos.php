@@ -23,14 +23,23 @@ if (strstr($argv[1], "http"))
 		{
 			if (strstr($matches[1][$i], "http"))
 				$tab[$i] = $matches[1][$i];
+			else if ($matches[1][$i][0] == '/' && $matches[1][$i][1] == '/')
+                $tab[$i] = "http:".$matches[1][$i];
 			else if ($matches[1][$i][0] == '/')
 				$tab[$i] = $url.$matches[1][$i];
 			else
 				$tab[$i] = $url."/".$matches[1][$i];
 		}
 
+//        print_r($tab);
+//        print_r($matches);
+        
 		//make directory
-		$path = substr($argv[1], 7)."/";
+        if (strstr($argv[1], "https"))
+            $path = substr($argv[1], 8)."/";
+        else
+            $path = substr($argv[1], 7)."/";
+            
 		if (!is_dir($path))
 			mkdir($path, 0755, true);
 
@@ -38,6 +47,7 @@ if (strstr($argv[1], "http"))
 		for ($i = 0; $i < $len; $i++)
 		{
 			$ci = curl_init($tab[$i]);
+//			curl_setopt($ci, CURLOPT_SSL_VERIFYPEER, 0);
 			curl_setopt($ci, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ci, CURLOPT_HEADER, 0);
 			curl_setopt($ci, CURLOPT_BINARYTRANSFER,1);
