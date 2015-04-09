@@ -24,7 +24,7 @@ while (!feof($fd))
 sort($tab);
 $len = $i;
 for ($i = 0; $i < $len; $i++)
-	echo $tab[$i]["user"]."	".$tab[$i]["tty"]."	".$tab[$i]["date"]."\n";
+	echo $tab[$i]["user"]."   ".$tab[$i]["tty"]."  ".$tab[$i]["date"]."\n";
 
 fclose($fd);
 
