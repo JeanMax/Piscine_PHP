@@ -1,20 +1,7 @@
 <?php
 
-//check if login/passwd are valid
-function auth($login, $passwd)
-{
-    if (!file_exists("../private/passwd"))
-        return false;
-    $id_pw = unserialize(file_get_contents('../private/passwd'));
-    foreach ($id_pw as $id => $pw)
-        if ($id === $login)
-            if ($pw === hash('whirlpool', $passwd))
-				return true;
-	return false;
-}
-
 //check if we have some data from POST method
-if (!isset($_POST["login"]) || !isset($_POST["oldpw"]) || !isset($_POST["newpw"]) || $_POST["login"] === "" || $_POST["oldpw"] === "" || $_POST["newpw"] === "" || $_POST["submit"] !== "OK" || !auth($_POST["login"], $_POST["oldpw"]))
+if (!isset($_POST["login"]) || !isset($_POST["oldpw"]) || !isset($_POST["newpw"]) || $_POST["login"] === "" || $_POST["oldpw"] === "" || $_POST["newpw"] === "" || $_POST["submit"] !== "OK" || !file_exists("../private/passwd") || $_POST["oldpw"] === $_POST["newpw"])
 {
 	echo "ERROR\n";
 	return false;
@@ -22,9 +9,18 @@ if (!isset($_POST["login"]) || !isset($_POST["oldpw"]) || !isset($_POST["newpw"]
 
 //editing pwd
 $id_pw = unserialize(file_get_contents('../private/passwd'));
-$id_pw[$_POST["login"]] = hash('whirlpool', $_POST["newpw"]);
-file_put_contents('../private/passwd', serialize($id_pw));
+foreach ($id_pw as &$usr)
+	if ($usr["login"] === $_POST["login"])
+		if ($usr["passwd"] === hash('whirlpool', $_POST["oldpw"]))
+		{
+			$usr["passwd"] = hash('whirlpool', $_POST["newpw"]);
+			file_put_contents('../private/passwd', serialize($id_pw));
+			echo "OK\n";
+			return true;
+		}
 
-//yay
-echo "OK\n";
+// :/
+echo "ERROR\n";
+return false;
+
 ?>
