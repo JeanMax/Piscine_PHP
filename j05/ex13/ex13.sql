@@ -1,0 +1,2 @@
+SELECT AVG(ROUND(TODO, 0)) AS 'moyenne'
+FROM TODO;

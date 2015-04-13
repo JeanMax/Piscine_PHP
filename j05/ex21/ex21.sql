@@ -1,0 +1,3 @@
+SELECT MD5(REPLACE(INNER JOIN(telephone, '42'), '7', '9')) AS 'ft5'
+FROM TODO
+WHERE id = 84;
