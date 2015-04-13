@@ -1,12 +1,14 @@
 SELECT nom
-FROM TODO
-WHERE id = 42
-OR (id >= 62
-AND id <= 69)
-OR id = 71
-OR id = 88
-OR id = 89
-OR id = 90
-OR LIKE '%y%y%'
-OR LIKE '%yy%'
-LIMIT 5 OFFSET 3;
+FROM distrib
+WHERE id_distrib = 42
+OR (id_distrib >= 62
+AND id_distrib <= 69)
+OR id_distrib = 71
+OR id_distrib = 88
+OR id_distrib = 89
+OR id_distrib = 90
+OR nom
+LIKE '%y%y%'
+OR nom
+LIKE '%yy%'
+LIMIT 3, 5;

@@ -1,3 +1,4 @@
-SELECT num_etage AS 'etage', nb_sieges AS 'sieges'
-FROM TODO
-ORDER BY nb_sieges;
+SELECT DISTINCT etage_salle AS 'etage', SUM(nbr_siege) AS 'sieges'
+FROM salle 
+GROUP BY etage_salle
+ORDER BY SUM(nbr_siege) DESC;

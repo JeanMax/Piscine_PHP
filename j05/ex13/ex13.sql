@@ -1,2 +1,2 @@
-SELECT AVG(ROUND(TODO, 0)) AS 'moyenne'
-FROM TODO;
+SELECT ROUND(AVG(nbr_siege), 0) AS 'moyenne'
+FROM salle;

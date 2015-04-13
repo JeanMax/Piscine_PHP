@@ -1,5 +1,5 @@
 SELECT titre, resum
-FROM TODO
+FROM film
 WHERE resum
-LIKE BINARY '%vincent%'
-ORDER BY id;
+LIKE '%vincent%'
+ORDER BY id_film;

@@ -3,6 +3,6 @@ SELECT nom, date_naissance
 FROM fiche_personne
 WHERE nom
 LIKE BINARY '%a%'
-AND LENGTH(nom) < 9
+AND CHAR_LENGTH(nom) < 9
 ORDER BY nom
 LIMIT 10;

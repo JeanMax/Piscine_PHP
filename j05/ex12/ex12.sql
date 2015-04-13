@@ -1,5 +1,5 @@
 SELECT nom, prenom
-FROM TODO
+FROM fiche_personne
 WHERE nom
 LIKE '%-%'
 OR prenom

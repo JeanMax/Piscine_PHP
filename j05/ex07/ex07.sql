@@ -1,7 +1,7 @@
 SELECT titre, resum
-FROM TODO
+FROM film
 WHERE resum
 LIKE '%42%'
-AND titre
+OR titre
 LIKE '%42%'
-ORDER BY TODO;
+ORDER BY duree_min;

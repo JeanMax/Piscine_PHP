@@ -1,4 +1,4 @@
 SELECT REVERSE(MID(telephone, 2)) AS 'enohpelet'
-FROM TODO
+FROM distrib
 WHERE telephone
 LIKE '05%';
