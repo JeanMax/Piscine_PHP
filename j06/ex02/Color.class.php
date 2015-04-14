@@ -68,25 +68,25 @@ class Color
 			return false;
 	}
 
-	public function add(Color $to_add)
+	public function add(Color $rhs)
 	{
-		return new Color(array("red" => $this->red + $to_add->red,
-							   "green" => $this->green + $to_add->green,
-							   "blue" => $this->blue + $to_add->blue));
+		return new Color(array("red" => $this->red + $rhs->red,
+							   "green" => $this->green + $rhs->green,
+							   "blue" => $this->blue + $rhs->blue));
 	}
 
-	public function sub(Color $to_sub)
+	public function sub(Color $rhs)
 	{
-		return new Color(array("red" => $this->red - $to_sub->red,
-							   "green" => $this->green - $to_sub->green,
-							   "blue" => $this->blue - $to_sub->blue));
+		return new Color(array("red" => $this->red - $rhs->red,
+							   "green" => $this->green - $rhs->green,
+							   "blue" => $this->blue - $rhs->blue));
 	}
 
-	public function mult($to_mult)
+	public function mult($f)
 	{
-		return new Color(array("red" => $this->red * $to_mult,
-							   "green" => $this->green * $to_mult,
-							   "blue" => $this->blue * $to_mult));
+		return new Color(array("red" => $this->red * $f,
+							   "green" => $this->green * $f,
+							   "blue" => $this->blue * $f));
 	}
 }
 
