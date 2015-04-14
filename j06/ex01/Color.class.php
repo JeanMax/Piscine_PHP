@@ -10,9 +10,11 @@ class Color
 	private function check_arg($kw_arg)
 	{
 		$ac = count($kw_arg);
-		if ($ac == 1 && isset($kw_arg["rgb"]))
+		if ($ac == 1 && array_key_exists("rgb", $kw_arg))
 			return 1;
-		else if ($ac == 3 && isset($kw_arg["red"]) && isset($kw_arg["green"]) && isset($kw_arg["blue"]))
+		else if ($ac == 3 && array_key_exists("red", $kw_arg)
+				 && array_key_exists("green", $kw_arg)
+				 && array_key_exists("blue", $kw_arg))
 			return 3;
 		else
 			return 0;
@@ -40,7 +42,7 @@ class Color
 		}
 
 		if (self::$verbose)
-			echo "__construct Color (r:".$this->red.", g:".$this->green.", b:".$this->blue.")\n";
+			echo $this." constructed.\n";
 
 		return true;
 	}
@@ -48,7 +50,7 @@ class Color
 	public function __destruct()
 	{
 		if (self::$verbose)
-			echo "__destruct Color (r:".$this->red.", g:".$this->green.", b:".$this->blue.")\n";
+			echo $this." destructed.\n";
 
 		return true;
 	}
