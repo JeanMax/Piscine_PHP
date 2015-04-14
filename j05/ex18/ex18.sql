@@ -11,4 +11,4 @@ OR nom
 LIKE '%y%y%'
 OR nom
 LIKE '%yy%'
-LIMIT 3, 5;
+LIMIT 2, 5;
