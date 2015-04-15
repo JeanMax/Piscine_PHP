@@ -7,22 +7,10 @@ class Color
 	public $blue;
 	public static $verbose = false;
 
-	private function check_arg(array $kw_arg)
-	{
-		$ac = count($kw_arg);
-		if ($ac == 1 && array_key_exists("rgb", $kw_arg))
-			return 1;
-		else if ($ac == 3 && array_key_exists("red", $kw_arg)
-				 && array_key_exists("green", $kw_arg)
-				 && array_key_exists("blue", $kw_arg))
-			return 3;
-		else
-			return 0;
-	}
-
+	//MAGIC
 	public function __construct($kw_arg)
 	{
-		if (!($ac = $this->check_arg($kw_arg)))
+		if (!($ac = $this->_check_arg($kw_arg)))
 		{
 			$this->red = 0;
 			$this->green = 0;
@@ -60,7 +48,9 @@ class Color
 		return sprintf("Color( red: % 3d, green: % 3d, blue: % 3d )", $this->red, $this->green, $this->blue);
 	}
 
-	public function doc()
+
+	//STATIC
+	public static function doc()
 	{
 		if (file_exists("Color.doc.txt"))
 			return file_get_contents("Color.doc.txt");
@@ -68,6 +58,23 @@ class Color
 			return false;
 	}
 
+
+	//PRIVATE
+	private function _check_arg(array $kw_arg)
+	{
+		$ac = count($kw_arg);
+		if ($ac == 1 && array_key_exists("rgb", $kw_arg))
+			return 1;
+		else if ($ac == 3 && array_key_exists("red", $kw_arg)
+				 && array_key_exists("green", $kw_arg)
+				 && array_key_exists("blue", $kw_arg))
+			return 3;
+		else
+			return 0;
+	}
+
+
+	//PUBLIC
 	public function add(Color $rhs)
 	{
 		return new Color(array("red" => $this->red + $rhs->red,

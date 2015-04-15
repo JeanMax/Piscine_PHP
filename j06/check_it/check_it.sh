@@ -5,10 +5,10 @@ FOLDER="..";
 
 VERBOSE=0;
 
-DO_EX00=0;
-DO_EX01=0;
-DO_EX02=0;
-DO_EX03=0;
+DO_EX00=1;
+DO_EX01=1;
+DO_EX02=1;
+DO_EX03=1;
 DO_EX04=1;
 DO_EX05=0;
 
@@ -26,7 +26,7 @@ if [ "$DO_EX00" != 0 ]; then
 		echo "\033[37;01mdiff:\033[0m"; cat diff-j06;
 		if [ "$VERBOSE" != 0 ]; then
 			echo "\033[37;01m\ntest:\033[0m"; cat test-j06;
-			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_02.out;
+			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_00.out;
 		fi
 	fi
 fi
@@ -45,7 +45,7 @@ if [ "$DO_EX01" != 0 ]; then
 		echo "\033[37;01mdiff:\033[0m"; cat diff-j06;
 		if [ "$VERBOSE" != 0 ]; then
 			echo "\033[37;01m\ntest:\033[0m"; cat test-j06;
-			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_02.out;
+			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_01.out;
 		fi
 	fi
 fi
@@ -83,7 +83,7 @@ if [ "$DO_EX03" != 0 ]; then
 		echo "\033[37;01mdiff:\033[0m"; cat diff-j06;
 		if [ "$VERBOSE" != 0 ]; then
 			echo "\033[37;01m\ntest:\033[0m"; cat test-j06;
-			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_02.out;
+			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_03.out;
 		fi
 	fi
 fi
@@ -102,7 +102,7 @@ if [ "$DO_EX04" != 0 ]; then
 		echo "\033[37;01mdiff:\033[0m"; cat diff-j06;
 		if [ "$VERBOSE" != 0 ]; then
 			echo "\033[37;01m\ntest:\033[0m"; cat test-j06;
-			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_02.out;
+			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_04.out;
 		fi
 	fi
 fi
@@ -121,7 +121,7 @@ if [ "$DO_EX05" != 0 ]; then
 		echo "\033[37;01mdiff:\033[0m"; cat diff-j06;
 		if [ "$VERBOSE" != 0 ]; then
 			echo "\033[37;01m\ntest:\033[0m"; cat test-j06;
-			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_02.out;
+			echo "\033[37;01m\ncontrol:\033[0m"; cat out_main/main_05.out;
 		fi
 	fi
 fi

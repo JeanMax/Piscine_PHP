@@ -11,6 +11,7 @@ class Vertex
 	private $_color;
 	public static $verbose = false;
 
+	//MAGIC
 	public function __construct($kw_arg)
 	{
 		$this->set_x($kw_arg["x"]);
@@ -44,7 +45,8 @@ class Vertex
 			return (sprintf ("Vertex( x: %.2f, y: %.2f, z:%.2f, w:%.2f )", $this->_x, $this->_y, $this->_z, $this->_w));
 	}
 
-	public function doc()
+	//STATIC
+	public static function doc()
 	{
 		if (file_exists("Vertex.doc.txt"))
 			return file_get_contents("Vertex.doc.txt");
@@ -52,6 +54,7 @@ class Vertex
 			return false;
 	}
 
+	//GET
 	public function get_x()
 	{
 		return $this->_x;
@@ -73,6 +76,7 @@ class Vertex
 		return $this->_color;
 	}
 
+	//SET
 	public function set_x($x)
 	{
 		$this->_x = $x;

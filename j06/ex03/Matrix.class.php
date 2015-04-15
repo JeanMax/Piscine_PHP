@@ -14,6 +14,7 @@ class Matrix
 	const PROJECTION = 7;
 	public static $verbose = false;
 
+	//MAGIC
 	public function __construct(array $kw_arg)
 	{
 		if (!array_key_exists("preset", $kw_arg))
@@ -22,13 +23,13 @@ class Matrix
 		switch ($kw_arg["preset"])
 		{
 		case self::IDENTITY:
-			$this->identity();
+			$this->_identity();
 			break ;
 
 		case self::SCALE:
 			if (!array_key_exists("scale", $kw_arg))
 				exit();
-			$this->scale($kw_arg["scale"]);
+			$this->_scale($kw_arg["scale"]);
 			break ;
 
 		case self::RX:
@@ -36,13 +37,13 @@ class Matrix
 		case self::RZ:
 			if (!array_key_exists("angle", $kw_arg))
 				exit();
-			$this->rotation($kw_arg["preset"], $kw_arg["angle"]);
+			$this->_rotation($kw_arg["preset"], $kw_arg["angle"]);
 			break ;
 
 		case self::TRANSLATION:
 			if (!array_key_exists("vtc", $kw_arg))
 				exit();
-			$this->translation($kw_arg["vtc"]);
+			$this->_translation($kw_arg["vtc"]);
 			break ;
 
 		case self::PROJECTION:
@@ -51,7 +52,7 @@ class Matrix
 				!array_key_exists("near", $kw_arg) ||
 				!array_key_exists("far", $kw_arg))
 				exit();
-			$this->projection($kw_arg["fov"], $kw_arg["ratio"],
+			$this->_projection($kw_arg["fov"], $kw_arg["ratio"],
 							  $kw_arg["near"], $kw_arg["far"]);
 			break ;
 
@@ -80,7 +81,9 @@ class Matrix
 		return ($s);
 	}
 
-	public function doc()
+
+	//STATIC
+	public static function doc()
 	{
 		if (file_exists("Matrix.doc.txt"))
 			return file_get_contents("Matrix.doc.txt");
@@ -88,6 +91,8 @@ class Matrix
 			return false;
 	}
 
+
+	//PUBLIC
 	public function mult(Matrix $rhs)
 	{
 		$mult = clone $this;
@@ -129,7 +134,9 @@ class Matrix
 			"color" => $vtx->get_color()));
 	}
 
-	private function identity()
+
+	//PRIVATE
+	private function _identity()
 	{
 		$this->_matrix = array(array(1, 0, 0, 0),
 							   array(0, 1, 0, 0),
@@ -140,7 +147,7 @@ class Matrix
 			echo "Matrix IDENTITY instance constructed\n";
 	}
 
-	private function translation(Vector $vtc)
+	private function _translation(Vector $vtc)
 	{
 		$this->_matrix = array(array(1, 0, 0, $vtc->get_x()),
 							   array(0, 1, 0, $vtc->get_y()),
@@ -151,7 +158,7 @@ class Matrix
 			echo "Matrix TRANSLATION preset instance constructed\n";
 	}
 
-	private function scale($scale)
+	private function _scale($scale)
 	{
 		$this->_matrix = array(array($scale, 0, 0, 0),
 							   array(0, $scale, 0, 0),
@@ -162,7 +169,7 @@ class Matrix
 			echo "Matrix SCALE preset instance constructed\n";
 	}
 
-	private function rotation($preset, $angle)
+	private function _rotation($preset, $angle)
 	{
 		switch ($preset)
         {
@@ -195,13 +202,20 @@ class Matrix
 		}
 	}
 
-	private function projection($fov, $ratio, $near, $far)
+	private function _projection($fov, $ratio, $near, $far)
 	{
+		$top = tan(deg2rad($fov) / 2) * $near;
+		$bottom = - $top;
+		$right = $top * $ratio;
+		$left = - $right;
+
 		$this->_matrix = array(
-			array(1 / (tan(deg2rad($fov / 2)) * $ratio), 0, 0, 0),
-			array(0, 1 / tan(deg2rad($fov / 2)), 0, 0),
-			array(0, 0, -$far / ($far - $near),
-				  -1 - ($far * $near) / ($far - $near)),
+			array((2 * $near) / ($right - $left), 0,
+				  ($right + $left) / ($right - $left), 0),
+			array(0, (2 * $near) / ($top - $bottom),
+				  ($top + $bottom) / ($top - $bottom), 0),
+			array(0, 0, -($far + $near) / ($far - $near), 
+				  -(2 * $far * $near) / ($far - $near)),
 			array(0, 0, -1, 0));
 
 		if (self::$verbose)

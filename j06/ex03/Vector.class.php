@@ -10,6 +10,7 @@ class Vector
 	private $_w;
 	public static $verbose = false;
 
+	//MAGIC
 	public function __construct($kw_arg)
 	{
 		if (array_key_exists("x", $kw_arg) &&
@@ -53,13 +54,15 @@ class Vector
 							$this->_x, $this->_y, $this->_z, $this->_w));
 	}
 
-	public function doc()
+	//STATIC
+	public static function doc()
 	{
 		if (file_exists("Vector.doc.txt"))
 			return file_get_contents("Vector.doc.txt");
 		else
 			return false;
 	}
+
 
 	//GET
 	public function get_x()
@@ -79,13 +82,15 @@ class Vector
 		return $this->_w;
 	}
 
-	// magnitude = sqrt(vector²)
+
+	//PUBLIC
+		// magnitude = sqrt(vector²)
 	public function magnitude()
 	{
 		return sqrt($this->_x * $this->_x + $this->_y * $this->_y + $this->_z * $this->_z);
 	}
 
-	// normalize = vector / magnitude(vector)
+		// normalize = vector / magnitude(vector)
 	public function normalize()
 	{
 		$mag = $this->magnitude();
@@ -95,7 +100,7 @@ class Vector
 								"z" => $this->_z / $mag));
 	}
 
-	// add = vector + rhs
+		// add = vector + rhs
 	public function add(Vector $rhs)
 	{
 		return new Vector(array("x" => $this->_x + $rhs->_x,
@@ -103,7 +108,7 @@ class Vector
 								"z" => $this->_z + $rhs->_z));
 	}
 
-	// sub = vector - rhs
+		// sub = vector - rhs
 	public function sub(Vector $rhs)
 	{
 		return new Vector(array("x" => $this->_x - $rhs->_x,
@@ -111,7 +116,7 @@ class Vector
 								"z" => $this->_z - $rhs->_z));
 	}
 
-	// opposite = vector * -1
+		// opposite = vector * -1
 	public function opposite()
 	{
 		return new Vector(array("x" => $this->_x * -1,
@@ -119,7 +124,7 @@ class Vector
 								"z" => $this->_z * -1));
 	}
 
-	// scalarProduct = vector * k
+		// scalarProduct = vector * k
 	public function scalarProduct($k)
 	{
 		return new Vector(array("x" => $this->_x * $k,
@@ -127,7 +132,7 @@ class Vector
 								"z" => $this->_z * $k));
 	}
 
-	//dotProduct = vector * rhs
+		//dotProduct = vector * rhs
 	public function dotProduct(Vector $rhs)
 	{
 		return ($this->_x * $rhs->_x +
@@ -135,7 +140,7 @@ class Vector
 				$this->_z * $rhs->_z);
 	}
 
-	// cos = (XaXb+YaYb+ZaZb) / sqrt((Xa²+Ya²+Za²)(Xb²+Yb²+Zb²))
+		// cos = (XaXb+YaYb+ZaZb) / sqrt((Xa²+Ya²+Za²)(Xb²+Yb²+Zb²))
 	public function cos(Vector $rhs)
 	{
 		return ($this->_x * $rhs->_x +
@@ -149,7 +154,7 @@ class Vector
 				  $rhs->_z * $rhs->_z));
 	}
 
-	// crossProduct = (YaZb-ZaYb, ZaXb-XaZb, XaYb-YaXb) 
+		// crossProduct = (YaZb-ZaYb, ZaXb-XaZb, XaYb-YaXb) 
 	public function crossProduct(Vector $rhs)
 	{
 		return new Vector(array("x" =>	$this->_y * $rhs->_z -
