@@ -10,7 +10,7 @@ class Vector
 	private $_w;
 	public static $verbose = false;
 
-	public function __construct(array $kw_arg)
+	public function __construct($kw_arg)
 	{
 		if (array_key_exists("x", $kw_arg) &&
 			array_key_exists("y", $kw_arg) &&

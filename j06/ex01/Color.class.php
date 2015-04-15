@@ -7,7 +7,7 @@ class Color
 	public $blue;
 	public static $verbose = false;
 
-	private function check_arg($kw_arg)
+	private function check_arg(array $kw_arg)
 	{
 		$ac = count($kw_arg);
 		if ($ac == 1 && array_key_exists("rgb", $kw_arg))

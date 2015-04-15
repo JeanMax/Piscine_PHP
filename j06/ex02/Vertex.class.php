@@ -11,7 +11,7 @@ class Vertex
 	private $_color;
 	public static $verbose = false;
 
-	public function __construct($kw_arg)
+	public function __construct(array $kw_arg)
 	{
 		$this->set_x($kw_arg["x"]);
 		$this->set_y($kw_arg["y"]);
@@ -52,6 +52,7 @@ class Vertex
 			return false;
 	}
 
+	//GET
 	public function get_x()
 	{
 		return $this->_x;
@@ -73,6 +74,7 @@ class Vertex
 		return $this->_color;
 	}
 
+	//SET
 	public function set_x($x)
 	{
 		$this->_x = $x;

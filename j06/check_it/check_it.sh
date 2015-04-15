@@ -7,9 +7,9 @@ VERBOSE=0;
 
 DO_EX00=0;
 DO_EX01=0;
-DO_EX02=1;
+DO_EX02=0;
 DO_EX03=0;
-DO_EX04=0;
+DO_EX04=1;
 DO_EX05=0;
 
 if [ "$DO_EX00" != 0 ]; then
