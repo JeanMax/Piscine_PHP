@@ -1,0 +1,8 @@
+
+<- Vector ----------------------------------------------------------------------
+The Vector class handles 3d vector.
+
+An instance can be contructed from :
+
+The class provides the following methods :
+---------------------------------------------------------------------- Vector ->
