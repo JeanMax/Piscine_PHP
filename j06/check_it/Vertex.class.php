@@ -25,7 +25,7 @@ class Vertex
 											 "green" => 255,
 											 "blue" => 255)));
 		if (self::$verbose)
-			echo $this." constructed\n";
+			echo $this." constructed".PHP_EOL;
 
 		return true;
 	}
@@ -33,7 +33,7 @@ class Vertex
 	public function __destruct()
 	{
 		if (self::$verbose)
-			echo $this." destructed\n";
+			echo $this." destructed".PHP_EOL;
 		return true;
 	}
 

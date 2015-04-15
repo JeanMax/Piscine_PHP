@@ -35,7 +35,7 @@ class Vector
 		}
 
 		if (self::$verbose)
-			echo $this." constructed\n";
+			echo $this." constructed".PHP_EOL;
 
 		return true;
 	}
@@ -43,7 +43,7 @@ class Vector
 	public function __destruct()
 	{
 		if (self::$verbose)
-			echo $this." destructed\n";
+			echo $this." destructed".PHP_EOL;
 		return true;
 	}
 

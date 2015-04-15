@@ -53,26 +53,26 @@ class Camera
 		$this->_set_height($kw_arg["height"]);
 
 		if (self::$verbose)
-			echo "Camera instance constructed\n";
+			echo "Camera instance constructed".PHP_EOL;
 		return true;
 	}
 
 	public function __destruct()
 	{
 		if (self::$verbose)
-			echo "Camera instance destructed\n";
+			echo "Camera instance destructed".PHP_EOL;
 		return true;
 	}
 
 	public function __toString()
 	{
 		return	"Camera( "
-			."\n+ Origine: ".$this->get_origin()
-			."\n+ tT:\n".$this->get_tt()
-			."\n+ tR:\n".$this->get_tr()
-			."\n+ tR->mult( tT ):\n".$this->get_view()
-			."\n+ Proj:\n".$this->get_proj()
-			."\n)";
+			.PHP_EOL."+ Origine: ".$this->get_origin()
+			.PHP_EOL."+ tT:".PHP_EOL.$this->get_tt()
+			.PHP_EOL."+ tR:".PHP_EOL.$this->get_tr()
+			.PHP_EOL."+ tR->mult( tT ):".PHP_EOL.$this->get_view()
+			.PHP_EOL."+ Proj:".PHP_EOL.$this->get_proj()
+			.PHP_EOL.")";
 	}
 
 	//STATIC

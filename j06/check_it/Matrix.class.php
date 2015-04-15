@@ -72,11 +72,11 @@ class Matrix
 
 	public function __toString()
 	{
-		$s  = sprintf("M | vtcX | vtcY | vtcZ | vtxO\n");
-		$s .= sprintf("-----------------------------\n");
-		$s .= sprintf("x | %3.2f | %3.2f | %3.2f | %3.2f\n", $this->_matrix[0][0], $this->_matrix[0][1], $this->_matrix[0][2], $this->_matrix[0][3]);
-		$s .= sprintf("y | %3.2f | %3.2f | %3.2f | %3.2f\n", $this->_matrix[1][0], $this->_matrix[1][1], $this->_matrix[1][2], $this->_matrix[1][3]);
-		$s .= sprintf("z | %3.2f | %3.2f | %3.2f | %3.2f\n", $this->_matrix[2][0], $this->_matrix[2][1], $this->_matrix[2][2], $this->_matrix[2][3]);
+		$s  = sprintf("M | vtcX | vtcY | vtcZ | vtxO").PHP_EOL;
+		$s .= sprintf("-----------------------------").PHP_EOL;
+		$s .= sprintf("x | %3.2f | %3.2f | %3.2f | %3.2f", $this->_matrix[0][0], $this->_matrix[0][1], $this->_matrix[0][2], $this->_matrix[0][3]).PHP_EOL;
+		$s .= sprintf("y | %3.2f | %3.2f | %3.2f | %3.2f", $this->_matrix[1][0], $this->_matrix[1][1], $this->_matrix[1][2], $this->_matrix[1][3]).PHP_EOL;
+		$s .= sprintf("z | %3.2f | %3.2f | %3.2f | %3.2f", $this->_matrix[2][0], $this->_matrix[2][1], $this->_matrix[2][2], $this->_matrix[2][3]).PHP_EOL;
 		$s .= sprintf("w | %3.2f | %3.2f | %3.2f | %3.2f", $this->_matrix[3][0], $this->_matrix[3][1], $this->_matrix[3][2], $this->_matrix[3][3]);
 		return ($s);
 	}
@@ -159,7 +159,7 @@ class Matrix
 							   array(0, 0, 0, 1));
 
 		if (self::$verbose)
-			echo "Matrix IDENTITY instance constructed\n";
+			echo "Matrix IDENTITY instance constructed".PHP_EOL;
 	}
 
 	private function _translation(Vector $vtc)
@@ -170,7 +170,7 @@ class Matrix
 							   array(0, 0, 0, 1));
 
 		if (self::$verbose)
-			echo "Matrix TRANSLATION preset instance constructed\n";
+			echo "Matrix TRANSLATION preset instance constructed".PHP_EOL;
 	}
 
 	private function _scale($scale)
@@ -181,7 +181,7 @@ class Matrix
 							   array(0, 0, 0, 1));
 
 		if (self::$verbose)
-			echo "Matrix SCALE preset instance constructed\n";
+			echo "Matrix SCALE preset instance constructed".PHP_EOL;
 	}
 
 	private function _rotation($preset, $angle)
@@ -194,7 +194,7 @@ class Matrix
 								   array(0, sin($angle), cos($angle), 0),
 								   array(0, 0, 0, 1));
 			if (self::$verbose)
-				echo "Matrix Ox ROTATION preset instance constructed\n";
+				echo "Matrix Ox ROTATION preset instance constructed".PHP_EOL;
 			break;
 
 		case self::RY:
@@ -203,7 +203,7 @@ class Matrix
 								   array(-sin($angle), 0, cos($angle), 0),
 								   array(0, 0, 0, 1));
 			if (self::$verbose)
-				echo "Matrix Oy ROTATION preset instance constructed\n";
+				echo "Matrix Oy ROTATION preset instance constructed".PHP_EOL;
 			break;
 
         case self::RZ:
@@ -212,7 +212,7 @@ class Matrix
 								  array(0, 0, 1, 0),
 								  array(0, 0, 0, 1));
 			if (self::$verbose)
-				echo "Matrix Oz ROTATION preset instance constructed\n";
+				echo "Matrix Oz ROTATION preset instance constructed".PHP_EOL;
 			break;
 		}
 	}
@@ -234,7 +234,7 @@ class Matrix
 			array(0, 0, -1, 0));
 
 		if (self::$verbose)
-			echo "Matrix PROJECTION preset instance constructed\n";
+			echo "Matrix PROJECTION preset instance constructed".PHP_EOL;
 	}
 
 }
