@@ -1,4 +1,46 @@
 
 <- Vector ----------------------------------------------------------------------
-Blabla
+The Vector class handles 3d vector.
+
+An instance can be contructed from a Vertex:
+new Vector( array( 'dest' => $vertex ) );
+
+Optional 'orig' (Vertex) parameter :
+[default value : $vertex1 = new Vertex(array('x' => 0.0, 'y' => 0.0, 'z' => 0.0))]
+new Vector( array( 'orig' => $vertex1, 'dest' => $vertex2 ) );
+
+The class provides the following methods :
+
+-get:
+float get_x()
+float get_y()
+float get_z()
+float get_w()
+
+float       magnitude()
+Return the vector length.
+
+Vector      normalize()
+Return the normalized vector, or a copy of the already normalized vector.
+
+Vector      add( Vector $rhs )
+Return the sum of the two vectors.
+
+Vector      sub( Vector $rhs )
+Return the difference of the two vectors.
+
+Vector      opposite()
+Return the opposite vector.
+
+Vector      scalarProduct( $k )
+Return the product of a scalar and a vector.
+
+float       dotProduct( Vector $rhs )
+Return the scalar product of two vectors.
+
+float       cos( Vector $rhs )
+Return the cosinus of the angle between the two vectors.
+
+Vector      crossProduct( Vector $rhs )
+Return the cross product of the two vectors (right hand marker)
 ---------------------------------------------------------------------- Vector ->

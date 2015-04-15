@@ -1,4 +1,30 @@
 
 <- Vertex ----------------------------------------------------------------------
-Blabla
+The Vertex class handles vertex.
+
+An instance can be constructed from either (x, y, z) float coords:
+new Vertex( array( 'x' => 0, 'y' => 0, 'z' => 0) );
+
+Optional 'w' (float) parameter :
+[default value : $w = 1]
+new Vertex( array( 'w' => $w, 'x' => 0, 'y' => 0, 'z' => 0) );
+
+Optional 'color' (Color) parameter :
+[default value : $color = new Color(array('red' => 255, 'green' => 255, 'blue' => 255))]
+new Vertex( array( 'x' => 0, 'y' => 0, 'z' => 0, 'color' => $color) );
+
+The class provides the following methods :
+-set:
+set_x( float $x );
+set_y( float $y );
+set_z( float $z );
+set_w( float $w );
+set_color( Color $color );
+
+-get:
+float get_x();
+float get_y();
+float get_z();
+float get_w();
+Color get_color();
 ---------------------------------------------------------------------- Vertex ->

@@ -32,6 +32,6 @@ $cam  = new Camera( array( 'origin' => $vtxO,
 
 print( $cam . PHP_EOL );
 
-//$origin = New Vertex( array( 'x' => 0, 'y' => 0, 'z' => 0.0 ) );
+//$origin = New Vertex( array( 'x' => 10, 'y' => 10, 'z' => 10.0 ) );
 //print_r($origin = $cam->watchVertex( $origin ));
 ?>

@@ -1,4 +1,37 @@
 
 <- Camera ----------------------------------------------------------------------
-Blabla
+The Camera class handles camera view
+
+An instance can be contructed from a Vertex:
+new Camera( array( 'origin' => $vtxO,
+'orientation' => $R,
+'width' => 640,
+'height' => 480,
+'fov' => 60,
+'near' => 1.0,
+'far' => 100.0) );
+
+’origin’ : coordonates of the camera
+’orientation’ : coordonates of the camera
+’width’ : of the screen.
+’height’ : of the screen.
+’fov’ : View field.
+’ratio’ : Projected image ratio.
+’near’ : clipping plan near of projection plan.
+’far’ : clipping plan far of projection plan.
+
+The class provides the following methods :
+
+-get:
+Vertex          get_origin()
+Matrix          get_tt()
+Matrix          get_tr()
+Matrix          get_view()
+Matrix          get_proj()
+float           get_width()
+float           get_height()
+
+Vertex watchVertex( Vertex $worldVertex )
+Return a "pixel" vertex from a "world" vertex.
+
 ---------------------------------------------------------------------- Camera ->

@@ -25,7 +25,7 @@ class Vertex
 											 "green" => 255,
 											 "blue" => 255)));
 		if (self::$verbose)
-			echo $this." constructed".PHP_EOL;
+			echo $this." constructed\n";
 
 		return true;
 	}
@@ -33,16 +33,16 @@ class Vertex
 	public function __destruct()
 	{
 		if (self::$verbose)
-			echo $this." destructed".PHP_EOL;
+			echo $this." destructed\n";
 		return true;
 	}
 
 	public function __toString()
 	{
 		if (self::$verbose)
-			return sprintf("Vertex( x: %.2f, y: %.2f, z:%.2f, w:%.2f, %s )", $this->_x, $this->_y, $this->_z, $this->_w, $this->_color);
+			return (sprintf("Vertex( x: %.2f, y: %.2f, z:%.2f, w:%.2f, %s )", $this->_x, $this->_y, $this->_z, $this->_w, $this->_color));
 		else
-			return sprintf ("Vertex( x: %.2f, y: %.2f, z:%.2f, w:%.2f )", $this->_x, $this->_y, $this->_z, $this->_w);
+			return (sprintf ("Vertex( x: %.2f, y: %.2f, z:%.2f, w:%.2f )", $this->_x, $this->_y, $this->_z, $this->_w));
 	}
 
 	//STATIC

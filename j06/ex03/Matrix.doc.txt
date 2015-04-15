@@ -1,4 +1,26 @@
 
 <- Matrix ----------------------------------------------------------------------
-Blabla
+The Matrix class handles matrix.
+
+The class constructor wait an array that contains the following parameters:
+
+’preset’ : The Matrix type.
+’scale’ : The scale value. Needed for scale
+’angle’ : The rotation angle. Needed for rotations (RX, RY, RZ)
+’vtc’ : Translation vector. Needed for translation
+’fov’ : View field. Needed for projection
+’ratio’ : Projected image ratio. Needed for projection
+’near’ : clipping plan near of projection plan. Needed for projection
+’far’ : clipping plan far of projection plan. Needed for projection
+
+The instance can be constructed from the previous array with :
+new Matrix( array( 'preset' => Matrix::TRANSLATION, 'vtc' => $vtc ) );
+
+The Matrix class also contain several useful methods :
+
+Matrix mult( Matrix $rhs )
+Return a new matrice, resulting on the product beetwen the current instance and the the Matrix received in parameters.
+
+Vertex transformVertex( Vertex $vtx )
+Return a new vertex resulting on the transformation of the vertex by the matrix.
 ---------------------------------------------------------------------- Matrix ->

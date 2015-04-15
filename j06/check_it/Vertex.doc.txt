@@ -10,7 +10,7 @@ Optional 'w' (float) parameter :
 new Vertex( array( 'w' => $w, 'x' => 0, 'y' => 0, 'z' => 0) );
 
 Optional 'color' (Color) parameter :
-[default value : $color = Color(array('red' => 255, 'green' => 255, 'blue' => 255))]
+[default value : $color = new Color(array('red' => 255, 'green' => 255, 'blue' => 255))]
 new Vertex( array( 'x' => 0, 'y' => 0, 'z' => 0, 'color' => $color) );
 
 The class provides the following methods :

@@ -66,7 +66,7 @@ class Matrix
 	public function __destruct()
 	{
 		if (self::$verbose)
-			echo "Matrix instance destructed\n";
+			echo "Matrix instance destructed".PHP_EOL;
 		return true;
 	}
 

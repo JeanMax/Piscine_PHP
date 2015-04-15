@@ -72,11 +72,11 @@ class Matrix
 
 	public function __toString()
 	{
-		$s  = sprintf("M | vtcX | vtcY | vtcZ | vtxO").PHP_EOL;
-		$s .= sprintf("-----------------------------").PHP_EOL;
-		$s .= sprintf("x | %3.2f | %3.2f | %3.2f | %3.2f", $this->_matrix[0][0], $this->_matrix[0][1], $this->_matrix[0][2], $this->_matrix[0][3]).PHP_EOL;
-		$s .= sprintf("y | %3.2f | %3.2f | %3.2f | %3.2f", $this->_matrix[1][0], $this->_matrix[1][1], $this->_matrix[1][2], $this->_matrix[1][3]).PHP_EOL;
-		$s .= sprintf("z | %3.2f | %3.2f | %3.2f | %3.2f", $this->_matrix[2][0], $this->_matrix[2][1], $this->_matrix[2][2], $this->_matrix[2][3]).PHP_EOL;
+		$s  = sprintf("M | vtcX | vtcY | vtcZ | vtxO\n");
+		$s .= sprintf("-----------------------------\n");
+		$s .= sprintf("x | %3.2f | %3.2f | %3.2f | %3.2f\n", $this->_matrix[0][0], $this->_matrix[0][1], $this->_matrix[0][2], $this->_matrix[0][3]);
+		$s .= sprintf("y | %3.2f | %3.2f | %3.2f | %3.2f\n", $this->_matrix[1][0], $this->_matrix[1][1], $this->_matrix[1][2], $this->_matrix[1][3]);
+		$s .= sprintf("z | %3.2f | %3.2f | %3.2f | %3.2f\n", $this->_matrix[2][0], $this->_matrix[2][1], $this->_matrix[2][2], $this->_matrix[2][3]);
 		$s .= sprintf("w | %3.2f | %3.2f | %3.2f | %3.2f", $this->_matrix[3][0], $this->_matrix[3][1], $this->_matrix[3][2], $this->_matrix[3][3]);
 		return ($s);
 	}
@@ -208,9 +208,9 @@ class Matrix
 
         case self::RZ:
 			$this->_matrix = array(array(cos($angle), -sin($angle), 0, 0),
-                                   array(sin($angle), cos($angle), 0, 0),
-                                   array(0, 0, 1, 0),
-                                   array(0, 0, 0, 1));
+								  array(sin($angle), cos($angle), 0, 0),
+								  array(0, 0, 1, 0),
+								  array(0, 0, 0, 1));
 			if (self::$verbose)
 				echo "Matrix Oz ROTATION preset instance constructed\n";
 			break;
