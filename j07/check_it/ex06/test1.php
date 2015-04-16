@@ -40,7 +40,7 @@ class Llama {
 }
 
 $uf = new UnholyFactory();
-$uf->absorb(new Footsoldier());
+
 $uf->absorb(new Footsoldier());
 $uf->absorb(new Archer());
 $uf->absorb(new Assassin());
