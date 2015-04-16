@@ -1,1 +1,1 @@
-"Error"
+PHP Fatal error:  Class CrippledSoldier contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Fighter::fight) in ***/copy_main_06.php on line 6

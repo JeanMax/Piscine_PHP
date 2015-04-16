@@ -3,15 +3,15 @@
 
 FOLDER="..";
 
-VERBOSE=1;
+VERBOSE=0;
 
 DO_EX00=1;
-DO_EX01=2;
-DO_EX02=0;
-DO_EX03=0;
-DO_EX04=0;
-DO_EX05=0;
-DO_EX06=0;
+DO_EX01=1;
+DO_EX02=1;
+DO_EX03=1;
+DO_EX04=1;
+DO_EX05=1;
+DO_EX06=1;
 
 if [ "$DO_EX00" != 0 ]; then
 	cp -r $FOLDER/ex00/. .;
@@ -99,7 +99,6 @@ fi
 
 if [ "$DO_EX03" != 0 ]; then
 	cp -r $FOLDER/ex03/. .;
-	cp ex03/Euron.class.php .;
 	cp ex03/test1.php ./copy_main_03.php;
 	php copy_main_03.php > test-j07;
 	diff test-j07 ex03/test1.out > diff-j07;
@@ -161,21 +160,20 @@ fi
 
 if [ "$DO_EX05" != 0 ]; then
 	cp -r $FOLDER/ex05/. .;
-	cp ex05/Euron.class.php .;
 	cp ex05/test1.php ./copy_main_05.php;
 	php copy_main_05.php > test-j07;
 	diff test-j07 ex05/test1.out > diff-j07;
 	FILE_SIZE=$(du diff-j07 | awk '{ print $1 }');
 	if [ "$FILE_SIZE" = 0 ]; then
-		echo "\053[37;01mTesting ex05a j07 : \053[32;01mOK\053[0m";
+		echo "\033[37;01mTesting ex05a j07 : \033[32;01mOK\033[0m";
 	else
-		echo "\053[37;01mTesting ex05a j07 : \053[31;01mKO\053[0m";
-		echo "\053[37;01mdiff:\053[0m";
+		echo "\033[37;01mTesting ex05a j07 : \033[31;01mKO\033[0m";
+		echo "\033[37;01mdiff:\033[0m";
 		cat diff-j07;
 		if [ "$VERBOSE" != 0 ]; then
-			echo "\053[37;01m\ntest:\053[0m";
+			echo "\033[37;01m\ntest:\033[0m";
 			cat test-j07;
-			echo "\053[37;01m\ncontrol:\053[0m";
+			echo "\033[37;01m\ncontrol:\033[0m";
 			cat ex05/test1.out;
 		fi
 	fi
@@ -185,15 +183,15 @@ if [ "$DO_EX05" != 0 ]; then
 	rm -f copy_main_05.php;
 	FILE_SIZE=$(du diff-j07 | awk '{ print $1 }');
 	if [ "$FILE_SIZE" = 0 ]; then
-		echo "\053[37;01mTesting ex05b j07 : \053[32;01mOK\053[0m";
+		echo "\033[37;01mTesting ex05b j07 : \033[32;01mOK\033[0m";
 	else
-		echo "\053[37;01mTesting ex05b j07 : \053[31;01mKO\053[0m";
-		echo "\053[37;01mdiff:\053[0m";
+		echo "\033[37;01mTesting ex05b j07 : \033[31;01mKO\033[0m";
+		echo "\033[37;01mdiff:\033[0m";
 		cat diff-j07;
 		if [ "$VERBOSE" != 0 ]; then
-			echo "\053[37;01m\ntest:\053[0m";
+			echo "\033[37;01m\ntest:\033[0m";
 			cat test-j07;
-			echo "\053[37;01m\ncontrol:\053[0m";
+			echo "\033[37;01m\ncontrol:\033[0m";
 			cat ex05/test2.out;
 		fi
 	fi
@@ -201,21 +199,20 @@ fi
 
 if [ "$DO_EX06" != 0 ]; then
 	cp -r $FOLDER/ex06/. .;
-	cp ex06/Euron.class.php .;
 	cp ex06/test1.php ./copy_main_06.php;
 	php copy_main_06.php > test-j07;
 	diff test-j07 ex06/test1.out > diff-j07;
 	FILE_SIZE=$(du diff-j07 | awk '{ print $1 }');
 	if [ "$FILE_SIZE" = 0 ]; then
-		echo "\063[37;01mTesting ex06a j07 : \063[32;01mOK\063[0m";
+		echo "\033[37;01mTesting ex06a j07 : \033[32;01mOK\033[0m";
 	else
-		echo "\063[37;01mTesting ex06a j07 : \063[31;01mKO\063[0m";
-		echo "\063[37;01mdiff:\063[0m";
+		echo "\033[37;01mTesting ex06a j07 : \033[31;01mKO\033[0m";
+		echo "\033[37;01mdiff:\033[0m";
 		cat diff-j07;
 		if [ "$VERBOSE" != 0 ]; then
-			echo "\063[37;01m\ntest:\063[0m";
+			echo "\033[37;01m\ntest:\033[0m";
 			cat test-j07;
-			echo "\063[37;01m\ncontrol:\063[0m";
+			echo "\033[37;01m\ncontrol:\033[0m";
 			cat ex06/test1.out;
 		fi
 	fi
@@ -225,15 +222,15 @@ if [ "$DO_EX06" != 0 ]; then
 	rm -f copy_main_06.php;
 	FILE_SIZE=$(du diff-j07 | awk '{ print $1 }');
 	if [ "$FILE_SIZE" = 0 ]; then
-		echo "\063[37;01mTesting ex06b j07 : \063[32;01mOK\063[0m";
+		echo "\033[37;01mTesting ex06b j07 : \033[32;01mOK\033[0m";
 	else
-		echo "\063[37;01mTesting ex06b j07 : \063[31;01mKO\063[0m";
-		echo "\063[37;01mdiff:\063[0m";
+		echo "\033[37;01mTesting ex06b j07 : \033[31;01mKO\033[0m";
+		echo "\033[37;01mdiff:\033[0m";
 		cat diff-j07;
 		if [ "$VERBOSE" != 0 ]; then
-			echo "\063[37;01m\ntest:\063[0m";
+			echo "\033[37;01m\ntest:\033[0m";
 			cat test-j07;
-			echo "\063[37;01m\ncontrol:\063[0m";
+			echo "\033[37;01m\ncontrol:\033[0m";
 			cat ex06/test2.out;
 		fi
 	fi

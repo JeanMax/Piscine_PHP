@@ -1,1 +1,1 @@
-"Error"
+PHP Fatal error:  Call to undefined method DrHouse::getHouseName() in ***/check_it/House.class.php on line 8
