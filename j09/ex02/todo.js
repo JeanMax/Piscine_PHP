@@ -10,27 +10,27 @@ function setCookie(cname, cvalue)
     var d = new Date(),
 		expires;
 
-    d.setTime(d.getTime() + 30*24*60*60*1000);
-    expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
+	d.setTime(d.getTime() + 30*24*60*60*1000);
+	expires = "expires=" + d.toGMTString();
+	document.cookie = cname + "=" + cvalue + "; " + expires;
 }
 
 function getCookie(cname)
 {
-    var name = cname + "=";
-    var ca = document.cookie.split(';'),
+	var name = cname + "=";
+	var ca = document.cookie.split(';'),
 		i, c;
 
-    for (i = 0; i < ca.length; i++)
+	for (i = 0; i < ca.length; i++)
 	{
-        c = ca[i];
-        while (c.charAt(0) == ' ')
+		c = ca[i];
+		while (c.charAt(0) == ' ')
 			c = c.substring(1);
-        if (c.indexOf(name) == 0)
-            return c.substring(name.length, c.length);
-    }
+		if (c.indexOf(name) == 0)
+			return c.substring(name.length, c.length);
+	}
 
-    return "";
+	return "";
 }
 
 function ask()
@@ -41,7 +41,7 @@ function ask()
 
 function newToDo(todo, cook)
 {
-    var div = document.createElement("DIV"),
+	var div = document.createElement("DIV"),
 		text = document.createTextNode(todo);
 
 	if (todo == null || todo == "")
@@ -67,10 +67,10 @@ function delToDo(div)
 		return false;
 
 	list.removeChild(document.getElementById(div));
-
+//    setCookie(div.toString(), "");
 	return true;
 }
 
-for (count = 100; count > 0; count--)
+for (count = 0; count > 100; count++)
 	if ((val = getCookie(count.toString())) != "")
 		newToDo(val, false);
