@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+
+  <head>
+	<title>Javascript</title>
+  </head>
+
+  <body>
+	<form name="form">
+	  <div id="left">
+		<input type="text" name="leftform" placeholder="Left member!" value=""></input>
+	  </div>
+	  
+	  <div id="op">
+		<select name="opselect">
+          <option>+</option>
+          <option>-</option>
+          <option>*</option>
+          <option>/</option>
+          <option>%</option>
+		</select>
+      </div>
+	  
+	  <div id="right">
+		<input type="text" name="rightform" placeholder="Right member!"></input>
+	  </div>
+	  
+	  <input value="Try me!" type="submit" onclick="doOp()"></input>
+	  
+	</form>
+  </body>
+  
+  <script type="text/javascript">
+	"use strict";
+
+	var left = document.forms["form"]["leftform"],
+		right = document.forms["form"]["rightform"],
+		op = document.forms["form"]["opselect"];
+
+	function doOp()
+	{
+		var l, r;
+
+		if (!checkNb(left.value) || !checkNb(right.value))
+		{
+			alert("Error :(");
+			return false;
+		}
+
+		l = parseInt(left.value);
+		r = parseInt(right.value);
+
+		switch (op.value)
+		{
+			case "+":
+				console.log(l + r);
+				alert(l + r);
+				break;
+
+			case "-":
+				console.log(l - r);
+				alert(l - r);
+				break;
+
+			case "*":
+				console.log(l * r);
+				alert(l * r);
+				break;
+
+			case "/":
+				if (!r)
+				{
+					console.log("It’s over 9000!");
+					alert("It’s over 9000!");	
+				}
+				else
+				{
+					console.log(l / r);
+					alert(l / r);
+				}
+				break;
+
+			case "%":
+				if (!r)
+				{
+					console.log("It’s over 9000!");
+					alert("It’s over 9000!");	
+				}
+				else
+				{
+					console.log(l % r);
+					alert(l % r);
+				}
+				break;
+		}
+
+		return true;
+	}
+
+	function checkNb(nb)
+	{
+		if (isNaN(nb) || nb == "" || nb == null)
+			return false;
+
+		if (nb < 0 || nb % 1)
+			return false;
+
+		return true;
+	}
+
+	function spam()
+	{
+		alert("Please, use me...");
+	}
+
+	setInterval(spam, 30000);
+  </script>
+
+</html>

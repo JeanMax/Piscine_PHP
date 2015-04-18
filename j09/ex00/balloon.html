@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+
+  <head>
+	<title>Javascript</title>
+	<style>
+	  #balloon { 
+		  position: relative;
+		  left: 30%;
+		  background-color: red;
+		  border-radius: 50%;
+		  width: 200px; 
+		  height: 200px;
+	  }
+	</style>
+  </head>
+
+  <body>
+	<div id="balloon" onclick="clickMe()" onmouseout="leaveMe()"></div>
+  </body>
+  
+  <script type="text/javascript">
+	"use strict";
+
+	var size = 200,
+		color = 0,
+		div = document.getElementById("balloon");
+
+	function colorMe()
+	{
+		switch (color % 3)
+		{
+			case 0:
+				div.setAttribute("style", "background-color: red;");
+				break;
+			case 1:
+				div.setAttribute("style", "background-color: green;");
+				break;
+			case 2:
+				div.setAttribute("style", "background-color: blue;");
+				break;
+		}
+	}
+
+	function clickMe()
+	{
+		console.debug('zboub');
+		color += 1;
+		colorMe();
+		size += 10;
+		if (size > 420)
+			size = 200;
+		div.style.height = size + "px";
+		div.style.width = size + "px";		
+	}
+
+	function leaveMe()
+	{
+		console.debug('zgeg');
+		color += 2;
+		colorMe();
+		if (size > 200)
+		{
+			size -= 5;
+			div.style.height = size + "px";
+	        div.style.width = size + "px";
+		}		
+	}
+  </script>
+
+</html>
